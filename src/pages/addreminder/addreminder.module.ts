@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { AddreminderPage } from './addreminder';
+import { AddReminderPage } from './addreminder';
 
 @NgModule({
   declarations: [
-    AddreminderPage,
+    AddReminderPage,
   ],
   imports: [
-    IonicPageModule.forChild(AddreminderPage),
+    IonicPageModule.forChild(AddReminderPage),
   ],
 })
-export class AddreminderPageModule {}
+export class AddReminderPageModule {}

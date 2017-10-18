@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the AddreminderPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { LocationSelect } from '../location-select/location-select';
 
 @IonicPage()
 @Component({
@@ -14,10 +8,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'addreminder.html',
 })
 export class AddReminderPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  name;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
   }
-
+  launchLocationPage(){
+    
+           let modal = this.modalCtrl.create(LocationSelect);
+    
+           modal.onDidDismiss((location) => {
+               console.log(location.name);
+              this.name = location.name;
+           });
+    
+           modal.present();   
+    
+       }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddReminderPage');
   }

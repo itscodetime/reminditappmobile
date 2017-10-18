@@ -26,9 +26,12 @@
         <ion-label floating>
           Location
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="text" placeholder="">{{name}}</ion-input>
+      
       </ion-item>
     </ion-list>
+    <p>{{name}}</p>
+    <button ion-button (click)="launchLocationPage()">Launch</button>
     <ion-item id="addReminder-input4">
       <ion-label>
         Date
